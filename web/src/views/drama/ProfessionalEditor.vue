@@ -1941,7 +1941,9 @@ const generateVideo = async () => {
   // 获取第一张选中的图片（仅在需要图片的模式下）
   let selectedImage = null
   if (selectedReferenceMode.value !== 'none' && selectedImagesForVideo.value.length > 0) {
+    // 同时搜索当前镜头图片和上一镜头尾帧
     selectedImage = videoReferenceImages.value.find(img => img.id === selectedImagesForVideo.value[0])
+      || previousStoryboardLastFrames.value.find(img => img.id === selectedImagesForVideo.value[0])
     if (!selectedImage || !selectedImage.image_url) {
       ElMessage.error('请选择有效的参考图片')
       return
@@ -1973,9 +1975,11 @@ const generateVideo = async () => {
         break
 
       case 'first_last':
-        // 首尾帧模式
+        // 首尾帧模式（同时搜索当前镜头图片和上一镜头尾帧）
         const firstImage = videoReferenceImages.value.find(img => img.id === selectedImagesForVideo.value[0])
+          || previousStoryboardLastFrames.value.find(img => img.id === selectedImagesForVideo.value[0])
         const lastImage = videoReferenceImages.value.find(img => img.id === selectedLastImageForVideo.value)
+          || previousStoryboardLastFrames.value.find(img => img.id === selectedLastImageForVideo.value)
 
         if (firstImage?.image_url) {
           requestParams.first_frame_url = firstImage.image_url
