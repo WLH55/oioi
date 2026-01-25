@@ -58,7 +58,7 @@ web/.vite/
 web/.env.local
 
 # Config file (use config.example.yaml as template)
-configs/config.yaml
+backend-go/configs/config.yaml
 
 # Docker publish documentation (optional)
 DOCKER_PUBLISH.md
