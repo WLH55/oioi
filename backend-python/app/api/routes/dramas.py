@@ -44,7 +44,7 @@ async def list_dramas(
             "author": drama.author,
             "genre": drama.genre,
             "status": drama.status,
-            "metadata": drama.metadata,
+            "metadata": drama.meta_data,
             "created_at": drama.created_at.isoformat() if drama.created_at else None,
             "updated_at": drama.updated_at.isoformat() if drama.updated_at else None
         })
@@ -485,10 +485,10 @@ async def save_outline(
         raise NotFoundException("剧本不存在")
 
     # Update metadata with outline
-    if drama.metadata is None:
-        drama.metadata = {}
+    if drama.meta_data is None:
+        drama.meta_data = {}
 
-    drama.metadata["outline"] = outline
+    drama.meta_data["outline"] = outline
     await db.commit()
 
     return APIResponse.success({"message": "保存成功"})
@@ -560,10 +560,10 @@ async def save_progress(
         raise NotFoundException("剧本不存在")
 
     # Update metadata with progress
-    if drama.metadata is None:
-        drama.metadata = {}
+    if drama.meta_data is None:
+        drama.meta_data = {}
 
-    drama.metadata["progress"] = progress
+    drama.meta_data["progress"] = progress
 
     # Update status if provided
     if "status" in progress:

@@ -367,7 +367,7 @@ Create a visually interesting sequence that covers the scene effectively."""
         """Generate detailed image prompt for storyboard"""
 
         # Get visual style from drama metadata
-        visual_style = drama.metadata.get("visual_style", "realistic") if drama.metadata else "realistic"
+        visual_style = drama.meta_data.get("visual_style", "realistic") if drama.meta_data else "realistic"
 
         prompt = f"""Create a {shot_type} shot storyboard frame for a {drama.genre or 'drama'} series.
 

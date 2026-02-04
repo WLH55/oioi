@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from app.models.video_merge import VideoMerge, VideoMergeStatus
 from app.models.drama import Episode, Drama
 from app.utils.video import get_video_processor

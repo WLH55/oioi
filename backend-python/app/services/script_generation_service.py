@@ -53,8 +53,8 @@ class ScriptGenerationService:
             # Build prompt for character generation
             prompt = self._build_character_generation_prompt(
                 title=drama.title,
-                genre=genre or drama.metadata.get("genre", "drama") if drama.metadata else "drama",
-                style=style or drama.metadata.get("style", "realistic") if drama.metadata else "realistic",
+                genre=genre or drama.meta_data.get("genre", "drama") if drama.meta_data else "drama",
+                style=style or drama.meta_data.get("style", "realistic") if drama.meta_data else "realistic",
                 num_characters=num_characters,
                 custom_prompt=custom_prompt
             )

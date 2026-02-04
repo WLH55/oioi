@@ -1,0 +1,23 @@
+# requirements/dev.txt
+# 开发环境专用依赖
+
+# 继承基础依赖
+-r base.txt
+
+# 测试框架
+pytest==7.4.4
+pytest-asyncio==0.23.3
+pytest-cov==4.1.0
+
+# 代码质量工具
+ruff==0.1.14
+black==23.12.1
+isort==5.13.2
+mypy==1.8.0
+
+# 调试工具
+ipython==8.20.0
+ipdb==0.13.13
+
+# 开发服务器
+watchdog==4.0.0

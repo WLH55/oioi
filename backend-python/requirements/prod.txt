@@ -1,0 +1,11 @@
+# requirements/prod.txt
+# 生产环境专用依赖
+
+# 继承基础依赖
+-r base.txt
+
+# 数据库迁移
+alembic==1.13.1
+
+# PostgreSQL 驱动（生产环境使用 PostgreSQL）
+asyncpg==0.29.0

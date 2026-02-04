@@ -34,7 +34,7 @@ class Drama(Base):
     status = Column(String(20), default=DramaStatus.DRAFT.value, nullable=False)
     thumbnail = Column(String(500), nullable=True)
     tags = Column(JSON, nullable=True)
-    metadata = Column(JSON, nullable=True)
+    meta_data = Column("metadata", JSON, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
     deleted_at = Column(DateTime(timezone=True), nullable=True)  # Soft delete

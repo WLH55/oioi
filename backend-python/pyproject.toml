@@ -1,0 +1,106 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "huobao-drama"
+version = "1.0.0"
+description = "AI-powered drama generation platform"
+readme = "README.md"
+requires-python = ">=3.10"
+# 依赖通过 requirements/ 管理
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "app*"]
+
+[tool.ruff]
+# Python 版本
+target-version = "py310"
+
+# 代码行长度限制
+line-length = 100
+
+# 排除目录
+exclude = [
+    ".git",
+    ".venv",
+    "venv",
+    "__pycache__",
+    "*.egg-info",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    "uploads",
+    "data",
+    "logs",
+]
+
+[tool.ruff.lint]
+# 启用的规则
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort
+    "N",      # pep8-naming
+    "UP",     # pyupgrade
+    "ASYNC",  # flake8-async
+    "B",      # flake8-bugbear
+]
+
+# 忽略的规则
+ignore = [
+    "E501",   # line too long (由 formatter 处理)
+    "B008",   # do not perform function calls in argument defaults
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src", "app"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # 默认排除
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+
+  # 项目特定排除
+  | uploads
+  | data
+  | logs
+)/
+'''
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = [
+    "ffmpeg_python.*",
+    "slowapi.*",
+]
+ignore_missing_imports = true
