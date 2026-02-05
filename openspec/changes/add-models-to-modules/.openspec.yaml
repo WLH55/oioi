@@ -1,0 +1,7 @@
+schema: spec-driven
+created: 2026-02-05
+title: 为各模块添加 SQLAlchemy 模型
+description: 在 src/{模块} 目录下创建各自的 models.py 文件，定义数据库模型
+status: pending
+author: Claude
+tags: [refactor, models, database]

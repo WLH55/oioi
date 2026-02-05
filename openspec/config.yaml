@@ -1,0 +1,45 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+# Add your tech stack, conventions, style guides, domain knowledge, etc.
+
+context: |
+  # 项目：AI 驱动的剧本视频生成平台
+
+  ## 技术栈
+  - 语言：Python 3.10+
+  - Web 框架：FastAPI + Uvicorn
+  - ORM：SQLAlchemy 2.0 (异步支持)
+  - 数据库：SQLite (开发) / PostgreSQL (生产，可选)
+  - 认证：PyJWT + Passlib + python-jose
+  - 数据验证：Pydantic + Pydantic-Settings
+  - HTTP 客户端：httpx + aiohttp
+  - 图片处理：Pillow
+  - 视频处理：ffmpeg-python
+  - 缓存：Redis (可选)
+  - API 文档：Swagger/OpenAPI (自动生成)
+
+  ## 项目结构
+  - 模块化单体架构
+  - 业务模块按功能划分：src/{模块名}/
+  - 每个模块包含：router、service、schemas、dependencies、exceptions
+
+  ## 领域模型
+  - 剧本 (dramas) → 分集 (episodes) → 场景 (scenes)
+  - 故事板 (storyboards) → 图片/视频生成
+  - 角色库 (character_library)、素材库 (assets)
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+rules:
+  - 所有文档的内容使用中文编写
+  -
