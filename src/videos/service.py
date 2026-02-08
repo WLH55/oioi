@@ -118,7 +118,7 @@ class VideoGenerationService:
             创建的视频生成记录
         """
         # 验证剧目存在
-        from app.models.drama import Drama
+        from src.dramas.models import Drama
         result = await self.db.execute(
             select(Drama).where(Drama.id == int(request.drama_id))
         )

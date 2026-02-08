@@ -4,7 +4,7 @@ Audio 模块业务逻辑层
 使用 FFmpeg 服务处理音频提取
 """
 
-from src.config import settings
+from src.core.config import settings
 from src.ffmpeg import FFmpegService
 
 from .exceptions import AudioExtractionException

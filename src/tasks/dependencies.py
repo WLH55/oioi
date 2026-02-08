@@ -8,7 +8,7 @@ from typing import Annotated
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.task import AsyncTask
+from src.tasks.models import Task as AsyncTask
 from src.database import get_db
 
 from .exceptions import TaskNotFound

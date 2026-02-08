@@ -9,7 +9,7 @@ from fastapi import Depends
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.ai_config import AIServiceConfig
+from src.ai_configs.models import AIServiceConfig
 from src.ai_configs.exceptions import AIConfigNotFound
 from src.database import get_db
 

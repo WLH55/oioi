@@ -25,7 +25,7 @@ class Drama(Base):
     status: Mapped[str] = mapped_column(String, default="draft")  # draft, in_progress, completed
     thumbnail: Mapped[str] = mapped_column(String, nullable=True)
     tags: Mapped[str] = mapped_column(Text, nullable=True)  # JSON 存储
-    metadata: Mapped[str] = mapped_column(Text, nullable=True)  # JSON 存储
+    meta_data: Mapped[str] = mapped_column(Text, nullable=True)  # JSON 存储
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime, default=datetime.utcnow, onupdate=datetime.utcnow

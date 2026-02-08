@@ -24,7 +24,8 @@ async def process_storyboard_generation(
         params: 生成参数
         task_id: 任务ID
     """
-    from app.models.drama import Episode, Scene
+    from src.episodes.models import Episode
+    from src.scenes.models import Scene
     from src.core.database import async_session_maker
 
     async with async_session_maker() as db:

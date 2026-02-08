@@ -8,7 +8,7 @@ from typing import Annotated
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.asset import Asset
+from src.assets.models import Asset
 from src.database import get_db
 
 from .exceptions import AssetNotFound

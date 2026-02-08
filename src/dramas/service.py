@@ -8,7 +8,8 @@ from typing import Any
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.dramas.models import Drama, Episode
+from src.dramas.models import Drama
+from src.episodes.models import Episode
 from src.character_library.models import Character
 
 from .exceptions import DramaNotFound

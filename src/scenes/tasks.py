@@ -7,7 +7,7 @@ import logging
 
 from sqlalchemy import select
 
-from app.models.drama import Scene
+from src.scenes.models import Scene
 
 logger = logging.getLogger(__name__)
 

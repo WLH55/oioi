@@ -116,7 +116,7 @@ async def update_ai_config(
             # 获取原始模型对象
             from sqlalchemy import select
 
-            from app.models.ai_config import AIServiceConfig
+            from src.ai_configs.models import AIServiceConfig
 
             result = await db.execute(
                 select(AIServiceConfig).where(AIServiceConfig.id == config.id)
@@ -149,7 +149,7 @@ async def delete_ai_config(
     """
     from sqlalchemy import select
 
-    from app.models.ai_config import AIServiceConfig
+    from src.ai_configs.models import AIServiceConfig
 
     result = await db.execute(
         select(AIServiceConfig).where(AIServiceConfig.id == config.id)

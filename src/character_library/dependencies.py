@@ -8,8 +8,7 @@ from typing import Annotated
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.character_library import CharacterLibrary
-from app.models.drama import Character
+from src.character_library.models import CharacterLibrary, Character
 from src.database import get_db
 
 from .exceptions import CharacterLibraryNotFound

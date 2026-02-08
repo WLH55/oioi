@@ -8,7 +8,7 @@ from typing import Annotated
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.models.drama import Drama
+from src.dramas.models import Drama
 from src.database import get_db
 
 from .exceptions import DramaNotFound

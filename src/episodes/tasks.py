@@ -8,7 +8,9 @@ from typing import Any
 
 from sqlalchemy import select
 
-from app.models.drama import Episode, Storyboard, VideoGeneration
+from src.episodes.models import Episode
+from src.storyboards.models import Storyboard
+from src.videos.models import VideoGeneration
 from src.core.config import settings
 
 logger = logging.getLogger(__name__)
@@ -29,8 +31,8 @@ async def process_episode_finalization(
         timeline_data: 时间线数据（可选）
         task_id: 任务ID
     """
-    from app.services.ffmpeg_service import FFmpegService
-    from app.utils.file import get_file_url
+    from src.ffmpeg import FFmpegService
+    from src.utils.file import get_file_url
     from src.core.database import async_session_maker
 
     ffmpeg_service = FFmpegService(output_dir=settings.LOCAL_STORAGE_PATH)

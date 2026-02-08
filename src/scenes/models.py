@@ -5,7 +5,7 @@
 """
 from datetime import datetime
 
-from sqlalchemy import String, Integer, DateTime, Text
+from sqlalchemy import String, Integer, DateTime, Text, Float
 from sqlalchemy.orm import Mapped, mapped_column
 
 from src.database import Base

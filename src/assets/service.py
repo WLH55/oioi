@@ -166,7 +166,7 @@ class AssetService:
         Returns:
             创建的资源对象
         """
-        from app.models.image_generation import ImageGeneration
+        from src.images.models import ImageGeneration
 
         from .exceptions import GenerationHasNoUrl, ImageGenerationNotFound
 
@@ -220,7 +220,7 @@ class AssetService:
         Returns:
             创建的资源对象
         """
-        from app.models.video_generation import VideoGeneration
+        from src.videos.models import VideoGeneration
 
         from .exceptions import GenerationHasNoUrl, VideoGenerationNotFound
 
